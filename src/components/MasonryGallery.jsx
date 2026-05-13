@@ -8,9 +8,9 @@ const MasonryGallery = () => {
     { url: '/ai_impact_2.jpg', title: 'Future of Tech', location: 'Tech Summit' },
     { url: '/bharat_mandapam.jpg', title: 'Bharat Mandapam', location: 'New Delhi' },
     { url: '/gdg.jpg', title: 'GDG Event', location: 'Developer Community' },
-    { url: '/gift.jpg', title: 'Special Recognition', location: 'Award Ceremony' },
+    { url: '/gift.jpg.jpg', title: 'Special Recognition', location: 'Award Ceremony' },
     { url: '/golden_temple.jpg', title: 'Spiritual Bliss', location: 'Amritsar' },
-    { url: '/my_pic.jpg', title: 'The Founder', location: 'Portfolio Hub' },
+    { url: '/my_pic.jpg.jpg', title: 'The Founder', location: 'Portfolio Hub' },
     { url: '/president_house.jpg', title: 'Rashtrapati Bhavan', location: 'Delhi' }
   ];
 
