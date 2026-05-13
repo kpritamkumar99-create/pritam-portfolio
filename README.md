@@ -47,7 +47,7 @@ A high-end, solo-brand digital flagship for Pritam Kumar (Founder & CEO of AayuV
 ## 🔒 Security
 
 The admin panel at `/admin` is protected by a master passkey.
-Default Passkey: `Pritam@2026` (Please update in `src/pages/Admin.jsx` before production).
+Default Passkey: `P########6` (Please update in `src/pages/Admin.jsx` before production).
 
 ---
 © 2026 Pritam Kumar. Engineered with pure logic.
