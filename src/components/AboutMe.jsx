@@ -97,7 +97,7 @@ const AboutMe = () => {
           >
             {[
               { label: "Founded", val: "AayuVeda AI" },
-              { label: "Education", val: "IIT Madras" },
+              { label: "Education", val: "CSE" },
               { label: "Philosophy", val: "Pure Logic" },
               { label: "Age", val: "18 Years" }
             ].map((stat, i) => (
