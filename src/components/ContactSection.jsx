@@ -7,42 +7,36 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('loading');
-    
-    try {
-      // 1. Save to Supabase (Database record)
-      const { error: dbError } = await supabase
-        .from('leads')
-        .insert([{ 
-          name: formData.name, 
-          email: formData.email, 
-          message: formData.message,
-          created_at: new Date().toISOString()
-        }]);
-      
-      if (dbError) throw dbError;
+ // handleSubmit function ko isse replace karein:
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus('loading');
+  
+  // 1. Try to save to Supabase (Optional backup)
+  try {
+    await supabase.from('leads').insert([{ 
+      name: formData.name, 
+      email: formData.email, 
+      message: formData.message,
+      created_at: new Date().toISOString()
+    }]);
+  } catch (err) {
+    console.log("Supabase save failed, but redirecting to WhatsApp...");
+  }
 
-      // 2. Redirect to WhatsApp
-      const whatsappPhone = '919102923597'; // Aapka number set kar diya hai
-      const textMessage = `*New Inquiry from Portfolio*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Message:* ${formData.message}`;
-      const waUrl = `https://wa.me/${whatsappPhone}?text=${textMessage}`;
-      
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      
-      setTimeout(() => {
-        window.open(waUrl, '_blank');
-        setStatus('idle');
-      }, 1500);
-      
-    } catch (err) {
-      console.error(err);
-      setStatus('error');
-      setTimeout(() => setStatus('idle'), 5000);
-    }
-  };
+  // 2. ALWAYS REDIRECT TO WHATSAPP
+  const whatsappPhone = '919102923597';
+  const textMessage = `*New Inquiry from Portfolio*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Message:* ${formData.message}`;
+  const waUrl = `https://wa.me/${whatsappPhone}?text=${textMessage}`;
+  
+  setStatus('success');
+  setFormData({ name: '', email: '', message: '' });
+  
+  // Turant WhatsApp open karein
+  window.open(waUrl, '_blank');
+  setTimeout(() => setStatus('idle'), 2000);
+};
+
 
   return (
     <section id="contact" className="py-24 bg-[#FBFBFD] relative overflow-hidden">
