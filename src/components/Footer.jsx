@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Rocket, Github, Twitter, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
+import { Rocket, Github, Twitter, Instagram , Linkedin, Mail, ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -23,10 +23,11 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               {[
-                { icon: Github, href: 'https://github.com/pritamkumar' },
-                { icon: Twitter, href: '#' },
-                { icon: Linkedin, href: '#' },
-                { icon: Mail, href: 'mailto:contact@pritamkumar.dev' },
+                { icon: Github, href: 'https://github.com/kpritamkumar99-create' },
+                { icon: Twitter, href: 'https://x.com/pritam_kum78258' },
+                { icon: Instagram, href: 'https://www.instagram.com/pritamx.dev?igsh=MXhmdTEzcHE1cnBoeQ==' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/pritam-kumar-34413a278?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
+                { icon: Mail, href: 'mailto:kpritamkumar99@gmail.com' },
               ].map((social, i) => (
                 <a 
                   key={i} 
@@ -66,7 +67,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="text-xs font-black text-gray-300 uppercase tracking-widest mb-2">Inquiries</p>
-                <p className="text-lg font-bold text-gray-600">contact@pritamkumar.dev</p>
+                <p className="text-lg font-bold text-gray-600">contact@kpritamkumar99@gmail.com</p>
               </div>
             </div>
           </div>
