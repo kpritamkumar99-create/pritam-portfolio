@@ -7,7 +7,6 @@ import GallerySlider from './components/GallerySlider';
 import Certificates from './components/Certificates';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import CustomCursor from './components/CustomCursor';
 import GlobalLoader from './components/GlobalLoader';
 import Admin from './pages/Admin';
 import Vision from './pages/Vision';
@@ -37,9 +36,8 @@ const Home = () => (
 function App() {
   return (
     <Router>
-      <div className="bg-[#FBFBFD] min-h-screen flex flex-col cursor-none">
+      <div className="bg-[#FBFBFD] min-h-screen flex flex-col">
         <GlobalLoader />
-        <CustomCursor />
         <Navbar />
         <div className="flex-grow">
           <Routes>
